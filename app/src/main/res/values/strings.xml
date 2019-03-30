@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="str_enter_github_user_id">Enter a github user id</string>
+    <string name="str_search">Search</string>
+    <string name="str_last_updated">Last Updated</string>
+    <string name="str_stars">Stars</string>
+    <string name="str_forks">Forks</string>
+</resources>

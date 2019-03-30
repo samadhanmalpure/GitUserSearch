@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/txtLastUpdatedLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:text="@string/str_last_updated"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_weight="0.5"/>
+
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/txtLastUpdated"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:textSize="14sp"
+            android:layout_weight="0.5"
+            android:gravity="right|end"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/txtStarsLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:text="@string/str_stars"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_weight="0.5"/>
+
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/txtStars"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:textSize="14sp"
+            android:layout_weight="0.5"
+            android:gravity="right|end"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/txtForksLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:text="@string/str_forks"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_weight="0.5"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/txtForks"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:textSize="14sp"
+            android:layout_weight="0.5"
+            android:gravity="right|end"/>
+
+    </LinearLayout>
+</LinearLayout>
