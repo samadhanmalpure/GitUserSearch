@@ -61,6 +61,7 @@ public class APICalls {
                         return new UserDetailsWithRepositories(userDetailsResponse, userReposList);
                     }
                 });
+
     }
 
     public DisposableObserver<UserDetailsWithRepositories> getUserDetailsWithReposeObserver(String userId, final NetworkCallReponseInterface<UserDetailsWithRepositories> callback) {
