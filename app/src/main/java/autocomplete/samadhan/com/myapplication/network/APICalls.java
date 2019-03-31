@@ -64,7 +64,7 @@ public class APICalls {
 
     }
 
-    public DisposableObserver<UserDetailsWithRepositories> getUserDetailsWithReposeObserver(String userId, final NetworkCallReponseInterface<UserDetailsWithRepositories> callback) {
+    public DisposableObserver<UserDetailsWithRepositories> getUserDetailsWithReposeObserver(String userId, final NetworkCallResponseInterface<UserDetailsWithRepositories> callback) {
         return getUserDetailsWithRepoList(userId).subscribeWith(new DisposableObserver<UserDetailsWithRepositories>() {
             @Override
             public void onNext(UserDetailsWithRepositories userDetailsWithRepositories) {

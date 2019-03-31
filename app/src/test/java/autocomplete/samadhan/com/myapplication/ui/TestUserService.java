@@ -5,19 +5,18 @@ import java.util.Collections;
 import autocomplete.samadhan.com.myapplication.model.UserDetails;
 import autocomplete.samadhan.com.myapplication.model.UserDetailsWithRepositories;
 import autocomplete.samadhan.com.myapplication.model.UserRepos;
-import autocomplete.samadhan.com.myapplication.network.NetworkCallReponseInterface;
+import autocomplete.samadhan.com.myapplication.network.NetworkCallResponseInterface;
 import autocomplete.samadhan.com.myapplication.network.UserService;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.observers.DisposableObserver;
 
 public class TestUserService implements UserService {
 
-    public NetworkCallReponseInterface<UserDetailsWithRepositories> responseListener;
+    private NetworkCallResponseInterface<UserDetailsWithRepositories> responseListener;
 
-    DisposableObserver<UserDetailsWithRepositories> disposable;
+    private DisposableObserver<UserDetailsWithRepositories> disposable;
 
-    public TestUserService(final NetworkCallReponseInterface<UserDetailsWithRepositories> responseListener) {
-        this.responseListener = responseListener;
+    TestUserService() {
         disposable = new DisposableObserver<UserDetailsWithRepositories>() {
             @Override
             public void onNext(UserDetailsWithRepositories userDetailsWithRepositories) {
@@ -40,7 +39,8 @@ public class TestUserService implements UserService {
     }
 
     @Override
-    public Disposable getUserDetailsWithReposeObserver(String userId, final NetworkCallReponseInterface<UserDetailsWithRepositories> taks_completed) {
+    public Disposable getUserDetailsWithReposeObserver(String userId, final NetworkCallResponseInterface<UserDetailsWithRepositories> taks_completed) {
+        responseListener = taks_completed;
         return disposable;
     }
 

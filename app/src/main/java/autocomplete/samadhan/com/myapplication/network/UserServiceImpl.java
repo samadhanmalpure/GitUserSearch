@@ -6,7 +6,7 @@ import io.reactivex.disposables.Disposable;
 public class UserServiceImpl implements UserService {
 
     @Override
-    public Disposable getUserDetailsWithReposeObserver(String userId, NetworkCallReponseInterface<UserDetailsWithRepositories> taks_completed) {
+    public Disposable getUserDetailsWithReposeObserver(String userId, NetworkCallResponseInterface<UserDetailsWithRepositories> taks_completed) {
         return APICalls.getInstance().getUserDetailsWithReposeObserver(userId, taks_completed);
     }
 }

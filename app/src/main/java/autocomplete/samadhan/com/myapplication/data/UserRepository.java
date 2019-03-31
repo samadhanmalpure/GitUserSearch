@@ -5,8 +5,7 @@ import android.arch.lifecycle.MutableLiveData;
 import android.util.Log;
 
 import autocomplete.samadhan.com.myapplication.model.UserDetailsWithRepositories;
-import autocomplete.samadhan.com.myapplication.network.APICalls;
-import autocomplete.samadhan.com.myapplication.network.NetworkCallReponseInterface;
+import autocomplete.samadhan.com.myapplication.network.NetworkCallResponseInterface;
 import autocomplete.samadhan.com.myapplication.network.UserService;
 import io.reactivex.disposables.CompositeDisposable;
 
@@ -24,7 +23,7 @@ public class UserRepository {
 
     public LiveData<Resource<UserDetailsWithRepositories>> getUserDetailsWithRepositoryList(String userId) {
 
-        compositeDisposable.add(userService.getUserDetailsWithReposeObserver(userId, new NetworkCallReponseInterface<UserDetailsWithRepositories>() {
+        compositeDisposable.add(userService.getUserDetailsWithReposeObserver(userId, new NetworkCallResponseInterface<UserDetailsWithRepositories>() {
             @Override
             public void onSuccess(UserDetailsWithRepositories response) {
                 resourceMutableLiveData.setValue(Resource.success(response));

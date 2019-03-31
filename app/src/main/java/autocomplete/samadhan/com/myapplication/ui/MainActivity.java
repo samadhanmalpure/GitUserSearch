@@ -30,7 +30,7 @@ import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity implements MainViewInterface, RepositoryListAdapter.DisplayDialogInterface{
 
-    private MainPresentor mainPresentor;
+    private MainPresenter mainPresenter;
 
     @BindView(R.id.username)
     TextInputEditText edtUserName;
@@ -61,8 +61,8 @@ public class MainActivity extends AppCompatActivity implements MainViewInterface
 
     private void init() {
         imgProfilePic.setVisibility(View.GONE);
-        mainPresentor = new MainPresentor(MainActivity.this, userRepository);
-        mainPresentor.detailsLiveData.observe(this, new Observer<UserDetailsWithRepositories>() {
+        mainPresenter = new MainPresenter(userRepository);
+        mainPresenter.detailsLiveData.observe(this, new Observer<UserDetailsWithRepositories>() {
             @Override
             public void onChanged(@Nullable UserDetailsWithRepositories userDetailsWithRepositories) {
                 displayUserDetailsWithRepos(userDetailsWithRepositories);
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements MainViewInterface
                 (InputMethodManager) edtUserName.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
         if (imm.isActive())
             imm.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS);
-        mainPresentor.getUserDetailsWithRepositoryList(edtUserName.getText().toString());
+        mainPresenter.getUserDetailsWithRepositoryList(edtUserName.getText().toString());
     }
 
     @Override
