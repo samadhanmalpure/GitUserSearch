@@ -65,7 +65,8 @@ public class MainActivity extends AppCompatActivity implements MainViewInterface
         mainPresenter.detailsLiveData.observe(this, new Observer<UserDetailsWithRepositories>() {
             @Override
             public void onChanged(@Nullable UserDetailsWithRepositories userDetailsWithRepositories) {
-                displayUserDetailsWithRepos(userDetailsWithRepositories);
+                    imgProfilePic.setVisibility(View.VISIBLE);
+                    displayUserDetailsWithRepos(userDetailsWithRepositories);
             }
         });
     }
@@ -81,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements MainViewInterface
 
     @Override
     public void displayUserDetailsWithRepos(UserDetailsWithRepositories userDetailsWithRepositories) {
-        imgProfilePic.setVisibility(View.VISIBLE);
+
         txtUserName.setText(userDetailsWithRepositories.getUserDetails().getName());
         Glide.with(this).load(userDetailsWithRepositories.getUserDetails().getProfilePicUrl()).apply(new RequestOptions().placeholder(R.drawable.ic_launcher_background)).into(imgProfilePic);
         adapter = new RepositoryListAdapter(userDetailsWithRepositories, MainActivity.this);

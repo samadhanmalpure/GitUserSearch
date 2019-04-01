@@ -47,7 +47,7 @@ public class MainPresenterTests {
     @Test
     public void getUserDetailsWithRepositoryList() {
         // Arrange
-        String input = "EricDw";
+        String input = "samadhanmalpure";
         String expected = input;
 
         // Act

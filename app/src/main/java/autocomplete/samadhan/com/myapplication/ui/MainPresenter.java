@@ -40,7 +40,8 @@ public class MainPresenter implements MainPresenterInterface {
         detailsMediator.addSource(detailsResourceMediator, new Observer<Resource<UserDetailsWithRepositories>>() {
             @Override
             public void onChanged(@Nullable Resource<UserDetailsWithRepositories> userDetailsWithRepositoriesResource) {
-                if (userDetailsWithRepositoriesResource != null
+                if (userDetailsWithRepositoriesResource != null && userDetailsWithRepositoriesResource.data.getUserDetails() != null
+                        &&  userDetailsWithRepositoriesResource.data.getUserDetails().getProfilePicUrl() != null
                         && userDetailsWithRepositoriesResource.status == Resource.Status.SUCCESS)
                     detailsMediator.setValue(userDetailsWithRepositoriesResource.data);
             }

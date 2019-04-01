@@ -21,7 +21,7 @@ public class TestUserService implements UserService {
             @Override
             public void onNext(UserDetailsWithRepositories userDetailsWithRepositories) {
                 UserDetails userDetails = new UserDetails();
-                userDetails.setName("EricDw");
+                userDetails.setName("samadhanmalpure");
                 userDetailsWithRepositories.setUserDetails(userDetails);
                 responseListener.onSuccess(userDetailsWithRepositories);
             }
