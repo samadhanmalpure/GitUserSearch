@@ -22,6 +22,7 @@ public class TestUserService implements UserService {
             public void onNext(UserDetailsWithRepositories userDetailsWithRepositories) {
                 UserDetails userDetails = new UserDetails();
                 userDetails.setName("samadhanmalpure");
+                userDetails.setProfilePicUrl("https://i.imgur.com/itElfV3.jpg");
                 userDetailsWithRepositories.setUserDetails(userDetails);
                 responseListener.onSuccess(userDetailsWithRepositories);
             }

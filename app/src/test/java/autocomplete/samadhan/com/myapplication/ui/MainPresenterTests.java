@@ -22,14 +22,6 @@ public class MainPresenterTests {
     private UserRepository userRepository;
     private TestUserService userService = new TestUserService();
 
-    private MainViewInterface view = new MainViewInterface() {
-
-        @Override
-        public void displayUserDetailsWithRepos(UserDetailsWithRepositories userDetailsWithRepositories) {
-
-        }
-    };
-
     @Before
     public void setUp() {
         userRepository = new UserRepository(userService);

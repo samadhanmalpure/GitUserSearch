@@ -30,9 +30,7 @@ public class MainPresenter implements MainPresenterInterface {
                 Transformations.switchMap(mutableUserId,
                         new Function<String, LiveData<Resource<UserDetailsWithRepositories>>>() {
                             @Override
-                            public LiveData<Resource<UserDetailsWithRepositories>> apply(
-                                    String input
-                            ) {
+                            public LiveData<Resource<UserDetailsWithRepositories>> apply(String input) {
                                 return userRepository.getUserDetailsWithRepositoryList(input);
                             }
                         });
@@ -40,7 +38,8 @@ public class MainPresenter implements MainPresenterInterface {
         detailsMediator.addSource(detailsResourceMediator, new Observer<Resource<UserDetailsWithRepositories>>() {
             @Override
             public void onChanged(@Nullable Resource<UserDetailsWithRepositories> userDetailsWithRepositoriesResource) {
-                if (userDetailsWithRepositoriesResource != null && userDetailsWithRepositoriesResource.data.getUserDetails() != null
+                if (userDetailsWithRepositoriesResource != null
+                        && userDetailsWithRepositoriesResource.data.getUserDetails().getName() != null
                         &&  userDetailsWithRepositoriesResource.data.getUserDetails().getProfilePicUrl() != null
                         && userDetailsWithRepositoriesResource.status == Resource.Status.SUCCESS)
                     detailsMediator.setValue(userDetailsWithRepositoriesResource.data);
